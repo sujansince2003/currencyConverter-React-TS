@@ -14,7 +14,7 @@ then((res)=>res.json()).then((result) =>setData(result[currency]) )
    
 
 
-    },[])
+    },[currency])
 return data;
    
 }
