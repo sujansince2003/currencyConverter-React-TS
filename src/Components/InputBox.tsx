@@ -3,8 +3,8 @@ interface InputBoxProps {
   label: string;
   className: string;
   Amount: number;
-  onAmountChange: () => string;
-  onCurrencyChange: () => string;
+  onAmountChange?: (amount: number) => void;
+  onCurrencyChange?: (currency: string) => void;
   currencyOption: string[];
   selectCurrency: string;
   amountDisable?: boolean;
@@ -32,7 +32,7 @@ function InputBox({
           type="number"
           placeholder="Amount"
           disabled={amountDisable}
-          value={Amount}
+          value={Amount === undefined ? "" : Amount.toString()}
           onChange={(e) =>
             onAmountChange && onAmountChange(Number(e.target.value))
           }
