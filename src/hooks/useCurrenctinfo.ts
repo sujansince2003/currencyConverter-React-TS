@@ -1,7 +1,10 @@
 import { useState,useEffect } from "react";
 
-
-export function useCurrencyinfo(currency:string)
+interface CurrencyInfo {
+    [key: string]: number;
+  }
+  
+export function useCurrencyinfo(currency:string):CurrencyInfo
 {
     const [data,setData]=useState({})
     useEffect(()=>
